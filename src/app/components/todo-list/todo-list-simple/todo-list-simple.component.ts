@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
 import { Todo } from 'src/app/models/todo';
 
-
 @Component({
-  selector: 'app-todo-list',
-  templateUrl: './todo-list.component.html',
-  styleUrls: ['./todo-list.component.scss']
+  selector: 'app-todo-list-simple',
+  templateUrl: './todo-list-simple.component.html',
+  styleUrls: ['./todo-list-simple.component.scss']
 })
-export class TodoListComponent {
+export class TodoListSimpleComponent {
   todos: Todo[]= [];
   newTask: string = '';
 
@@ -15,7 +14,7 @@ export class TodoListComponent {
     if (this.newTask) {
       let todo = new Todo();
       todo.task = this.newTask;
-      this.todos = [...this.todos, todo];
+      this.todos.push(todo);
       this.newTask = '';
     }
   }
