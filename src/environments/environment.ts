@@ -6,5 +6,6 @@ export const environment = {
     storageBucket: "todo-app-8a7c5.appspot.com",
     messagingSenderId: "89487294547",
     appId: "1:89487294547:web:48d48db92d0bcb6a9ac6a6"
-  }
+  },
+  baseUrl: "http://localhost:3000/api"
 };
