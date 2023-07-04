@@ -15,21 +15,14 @@ export class TodoMongoService {
     return this.http.get<{success: boolean, results: Todo[]}>(`${environment.baseUrl}/todos`)
     .pipe(
       map(
-        (res)=> res.results.map((todo:Todo) => {
-          todo.id = todo._id;
-          return todo;
-          }
+        (res)=> res.results
         )
-      )
-    );
+      );
   }
 
   addTodo(todo: Todo){
     return this.http.post<{success: boolean, results: Todo}>(`${environment.baseUrl}/todos`, todo)
-    .pipe(map((res)=> {
-      res.results.id = res.results._id;
-      return res.results
-    }));
+    .pipe(map((res)=> res.results));
   }
 
   updateTodo(todo: Todo, id: string){
